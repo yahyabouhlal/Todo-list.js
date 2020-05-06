@@ -61,7 +61,11 @@ const generateTemp = todo =>{
             </li>
    `;  
    list.innerHTML += html;
+   localStorage[''] = list.innerHTML
 };
+if(localStorage['']){
+   list.innerHTML = localStorage[''];
+}
 
 
 /* function pour controller l'evenement et pour ne pas etre repeté à chaque clique */
@@ -122,6 +126,7 @@ localStorage.getItem(addForm.add.value);
 list.addEventListener('click',e =>{
    if(e.target.tagName === 'I'){
       e.target.parentElement.remove();
+      localStorage[''] = list.innerHTML
    }
 });
 
